@@ -9,20 +9,20 @@ import CTASection from "@/components/home/CTASection";
 
 export default function HomePage() {
   return (
-    <main>
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950">
+
       <PublicNavbar />
 
-      <HeroSection />
-
-      <ProductPreview />
-
-      <WorkflowSection />
-
-      <FeaturesSection />
-
-      <CTASection />
+      <main>
+        <HeroSection />
+        <ProductPreview />
+        <WorkflowSection />
+        <FeaturesSection />
+        <CTASection />
+      </main>
 
       <Footer />
-    </main>
+
+    </div>
   );
 }
