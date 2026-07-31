@@ -59,7 +59,7 @@ const workspaces: Workspace[] = [
     id: "1",
     name: "FlowDesk",
     plan: "Enterprise",
-    color: "from-violet-500 to-indigo-600",
+    color: "from-purple-500 to-purple-950",
   },
 ];
 
@@ -259,8 +259,8 @@ export default function Navbar() {
           rounded-xl px-4 py-2 text-sm font-medium transition
           ${
             active
-            ? "bg-white/80 text-slate-900 dark:bg-white/10 dark:text-white"
-            : "text-slate-600 hover:bg-white/60 dark:text-slate-300"
+            ? "bg-purple-900 text-white dark:bg-purple-950 dark:text-purple-100"
+            : "text-purple-950 hover:bg-purple-100 dark:text-purple-200 dark:hover:bg-purple-900/50"
           }
         `}
       >
@@ -274,7 +274,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-white/20 bg-white/70 backdrop-blur-2xl dark:border-white/10 dark:bg-slate-950/70">
+    <header className="sticky top-0 z-50 w-full border-b border-purple-200/50 bg-white/70 backdrop-blur-2xl dark:border-purple-900/50 dark:bg-purple-950/70">
 
       <div className="relative mx-auto flex h-20 w-full max-w-[1700px] items-center justify-between px-4 lg:px-8">
 
@@ -284,7 +284,7 @@ export default function Navbar() {
 
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="flex h-11 w-11 items-center justify-center rounded-xl border bg-white/60 lg:hidden"
+            className="flex h-11 w-11 items-center justify-center rounded-xl border border-purple-200 bg-white/60 text-purple-950 dark:border-purple-900 dark:bg-purple-950/60 dark:text-purple-100 lg:hidden"
           >
             {mobileOpen ? <X /> : <Menu />}
           </button>
@@ -296,7 +296,7 @@ export default function Navbar() {
             className="flex items-center gap-3"
           >
 
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-500 to-indigo-600 text-white">
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-600 to-purple-950 text-white">
 
               <Briefcase />
 
@@ -305,11 +305,11 @@ export default function Navbar() {
 
             <div className="hidden lg:block">
 
-              <h2 className="font-bold text-slate-900 dark:text-white">
+              <h2 className="font-bold text-purple-950 dark:text-white">
                 FlowDesk
               </h2>
 
-              <p className="text-xs text-slate-500">
+              <p className="text-xs text-purple-700 dark:text-purple-300">
                 Enterprise Workspace
               </p>
 
@@ -329,10 +329,10 @@ export default function Navbar() {
 
             <button
               onClick={()=>setWorkspaceOpen(!workspaceOpen)}
-              className="ml-5 flex items-center gap-3 rounded-2xl border bg-white/60 px-4 py-2.5"
+              className="ml-5 flex items-center gap-3 rounded-2xl border border-purple-200 bg-white/60 px-4 py-2.5 text-purple-950 dark:border-purple-900 dark:bg-purple-950/60 dark:text-purple-100"
             >
 
-              <Building2 className="h-5 w-5"/>
+              <Building2 className="h-5 w-5 text-purple-700 dark:text-purple-300"/>
 
 
               <div className="text-left">
@@ -341,14 +341,14 @@ export default function Navbar() {
                   {selectedWorkspace.name}
                 </p>
 
-                <p className="text-xs text-slate-500">
+                <p className="text-xs text-purple-700 dark:text-purple-300">
                   {selectedWorkspace.plan}
                 </p>
 
               </div>
 
 
-              <ChevronDown className="h-4 w-4"/>
+              <ChevronDown className="h-4 w-4 text-purple-700 dark:text-purple-300"/>
 
             </button>
 
@@ -356,7 +356,7 @@ export default function Navbar() {
 
             {workspaceOpen && (
 
-              <div className="absolute top-16 w-80 rounded-3xl border bg-white p-4 shadow-xl">
+              <div className="absolute top-16 w-80 rounded-3xl border border-purple-200 bg-white p-4 shadow-xl dark:border-purple-900 dark:bg-purple-950">
 
 
                 {workspaces.map((workspace)=>(
@@ -367,20 +367,20 @@ export default function Navbar() {
                       setSelectedWorkspace(workspace);
                       setWorkspaceOpen(false);
                     }}
-                    className="flex w-full items-center justify-between rounded-2xl p-3 hover:bg-slate-100"
+                    className="flex w-full items-center justify-between rounded-2xl p-3 text-purple-950 hover:bg-purple-50 dark:text-purple-100 dark:hover:bg-purple-900/50"
                   >
 
                     <div className="flex items-center gap-3">
 
                       <div className={`h-10 w-10 rounded-xl bg-gradient-to-br ${workspace.color}`} />
 
-                      <div>
+                      <div className="text-left">
 
                         <p className="font-semibold">
                           {workspace.name}
                         </p>
 
-                        <p className="text-xs text-slate-500">
+                        <p className="text-xs text-purple-700 dark:text-purple-300">
                           {workspace.plan}
                         </p>
 
@@ -390,7 +390,7 @@ export default function Navbar() {
 
 
                     {selectedWorkspace.id === workspace.id &&
-                      <Check className="text-emerald-500"/>
+                      <Check className="text-purple-700 dark:text-purple-300"/>
                     }
 
 
@@ -428,7 +428,7 @@ export default function Navbar() {
 
           <button
             onClick={toggleTheme}
-            className="h-11 w-11 rounded-2xl border bg-white/60"
+            className="flex items-center justify-center h-11 w-11 rounded-2xl border border-purple-200 bg-white/60 text-purple-950 dark:border-purple-900 dark:bg-purple-950/60 dark:text-purple-100"
           >
 
             {darkMode ?
@@ -449,7 +449,7 @@ export default function Navbar() {
 
             <button
               onClick={()=>setNotificationOpen(!notificationOpen)}
-              className="relative flex h-11 w-11 items-center justify-center rounded-2xl border bg-white/60"
+              className="relative flex h-11 w-11 items-center justify-center rounded-2xl border border-purple-200 bg-white/60 text-purple-950 dark:border-purple-900 dark:bg-purple-950/60 dark:text-purple-100"
             >
 
               <Bell/>
@@ -457,7 +457,7 @@ export default function Navbar() {
 
               {unreadCount > 0 && (
 
-                <span className="absolute right-1 top-1 rounded-full bg-red-500 px-1 text-xs text-white">
+                <span className="absolute right-1 top-1 rounded-full bg-purple-900 px-1 text-xs text-white">
 
                   {unreadCount}
 
@@ -473,10 +473,10 @@ export default function Navbar() {
 
             {notificationOpen && (
 
-              <div className="absolute right-0 top-14 w-80 rounded-3xl border bg-white p-4 shadow-xl">
+              <div className="absolute right-0 top-14 w-80 rounded-3xl border border-purple-200 bg-white p-4 shadow-xl dark:border-purple-900 dark:bg-purple-950">
 
 
-                <h3 className="mb-3 font-bold">
+                <h3 className="mb-3 font-bold text-purple-950 dark:text-white">
                   Notifications
                 </h3>
 
@@ -485,19 +485,19 @@ export default function Navbar() {
 
                   <div
                     key={item.id}
-                    className="border-b py-3"
+                    className="border-b border-purple-100 dark:border-purple-900/50 py-3"
                   >
 
-                    <p className="font-semibold">
+                    <p className="font-semibold text-purple-950 dark:text-purple-100">
                       {item.title}
                     </p>
 
-                    <p className="text-sm text-slate-500">
+                    <p className="text-sm text-purple-800 dark:text-purple-300">
                       {item.description}
                     </p>
 
 
-                    <span className="text-xs text-slate-400">
+                    <span className="text-xs text-purple-600 dark:text-purple-400">
                       {item.time}
                     </span>
 
@@ -508,7 +508,7 @@ export default function Navbar() {
 
                 <Link
                   href="/notifications"
-                  className="mt-4 block rounded-xl bg-slate-900 py-2 text-center text-white"
+                  className="mt-4 block rounded-xl bg-purple-950 py-2 text-center text-white hover:bg-purple-900 dark:bg-purple-900 dark:hover:bg-purple-800"
                 >
 
                   View all notifications
@@ -536,24 +536,24 @@ export default function Navbar() {
 
             <button
               onClick={()=>setUserOpen(!userOpen)}
-              className="flex items-center gap-3 rounded-2xl border bg-white/60 p-2"
+              className="flex items-center gap-3 rounded-2xl border border-purple-200 bg-white/60 p-2 text-purple-950 dark:border-purple-900 dark:bg-purple-950/60 dark:text-purple-100"
             >
 
 
-              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-500 to-indigo-600 text-white">
+              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-600 to-purple-950 text-white">
 
                 {initials}
 
               </div>
 
 
-              <div className="hidden lg:block">
+              <div className="hidden lg:block text-left">
 
                 <p className="text-sm font-semibold">
                   {user?.name || "User"}
                 </p>
 
-                <p className="text-xs text-slate-500">
+                <p className="text-xs text-purple-700 dark:text-purple-300">
                   {user?.email || ""}
                 </p>
 
@@ -569,12 +569,12 @@ export default function Navbar() {
 
             {userOpen && (
 
-              <div className="absolute right-0 top-16 w-72 rounded-3xl border bg-white p-4 shadow-xl">
+              <div className="absolute right-0 top-16 w-72 rounded-3xl border border-purple-200 bg-white p-4 shadow-xl dark:border-purple-900 dark:bg-purple-950">
 
 
                 <Link
                   href="/profile"
-                  className="flex gap-3 rounded-xl p-3 hover:bg-slate-100"
+                  className="flex gap-3 rounded-xl p-3 text-purple-950 hover:bg-purple-50 dark:text-purple-100 dark:hover:bg-purple-900/50"
                 >
 
                   <User/>
@@ -585,7 +585,7 @@ export default function Navbar() {
 
                 <Link
                   href="/settings"
-                  className="flex gap-3 rounded-xl p-3 hover:bg-slate-100"
+                  className="flex gap-3 rounded-xl p-3 text-purple-950 hover:bg-purple-50 dark:text-purple-100 dark:hover:bg-purple-900/50"
                 >
 
                   <Settings/>
@@ -596,7 +596,7 @@ export default function Navbar() {
 
                 <button
                   onClick={handleLogout}
-                  className="flex w-full gap-3 rounded-xl p-3 text-red-600 hover:bg-red-50"
+                  className="flex w-full gap-3 rounded-xl p-3 text-purple-950 hover:bg-purple-100 dark:text-purple-200 dark:hover:bg-purple-900/80 font-medium"
                 >
 
                   <LogOut/>
