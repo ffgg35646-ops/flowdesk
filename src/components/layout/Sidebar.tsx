@@ -156,21 +156,21 @@ export default function Sidebar() {
     <aside
       className={`
         hidden lg:flex h-screen sticky top-0 flex-col
-        border-r border-white/20
+        border-r border-purple-200/50
         bg-white/70 backdrop-blur-3xl
-        dark:bg-slate-950/70 dark:border-white/10
+        dark:bg-purple-950/70 dark:border-purple-900/50
         transition-all duration-300
         ${collapsed ? "w-24" : "w-80"}
       `}
     >
 
 
-      <div className="flex items-center justify-between border-b border-white/10 p-6">
+      <div className="flex items-center justify-between border-b border-purple-200/50 dark:border-purple-900/50 p-6">
 
 
         <div className="flex items-center gap-3">
 
-          <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-600 to-indigo-600 text-white">
+          <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-600 to-purple-950 text-white">
 
             <Sparkles className="h-6 w-6" />
 
@@ -181,11 +181,11 @@ export default function Sidebar() {
 
             <div>
 
-              <h2 className="font-bold text-slate-900 dark:text-white">
+              <h2 className="font-bold text-purple-950 dark:text-white">
                 FlowDesk
               </h2>
 
-              <p className="text-xs text-slate-500">
+              <p className="text-xs text-purple-700 dark:text-purple-300">
                 Enterprise
               </p>
 
@@ -199,7 +199,7 @@ export default function Sidebar() {
 
         <button
           onClick={() => setCollapsed(!collapsed)}
-          className="rounded-xl p-2 hover:bg-slate-100 dark:hover:bg-white/5"
+          className="rounded-xl p-2 text-purple-950 hover:bg-purple-100 dark:text-purple-100 dark:hover:bg-purple-900/50"
         >
 
           {collapsed ? (
@@ -224,7 +224,7 @@ export default function Sidebar() {
 
   <Link
     href="/projects/new"
-    className="mb-6 flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-violet-600 to-indigo-600 px-4 py-3 text-sm font-semibold text-white transition hover:opacity-90"
+    className="mb-6 flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-purple-600 to-purple-950 px-4 py-3 text-sm font-semibold text-white transition hover:opacity-90"
   >
     <Plus className="h-5 w-5" />
     New Project
@@ -249,7 +249,7 @@ export default function Sidebar() {
 
                 <button
                   onClick={() => toggleGroup(group.title)}
-                  className="mb-3 flex w-full items-center justify-between px-3 text-xs font-semibold uppercase text-slate-400"
+                  className="mb-3 flex w-full items-center justify-between px-3 text-xs font-semibold uppercase text-purple-600 dark:text-purple-400"
                 >
 
                   {group.title}
@@ -292,8 +292,8 @@ export default function Sidebar() {
                           flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium transition
                           ${
                             active
-                              ? "bg-slate-900 text-white dark:bg-white dark:text-slate-900"
-                              : "text-slate-600 hover:bg-white dark:text-slate-300 dark:hover:bg-white/5"
+                              ? "bg-purple-950 text-white dark:bg-purple-900 dark:text-purple-100"
+                              : "text-purple-950 hover:bg-purple-100 dark:text-purple-200 dark:hover:bg-purple-900/50"
                           }
                           ${collapsed ? "justify-center" : ""}
                         `}
@@ -330,13 +330,13 @@ export default function Sidebar() {
 
         {!collapsed && (
 
-          <div className="mt-8 rounded-3xl border border-white/20 bg-violet-500/10 p-5">
+          <div className="mt-8 rounded-3xl border border-purple-200 bg-purple-100/50 p-5 dark:border-purple-900 dark:bg-purple-900/30">
 
             <div className="flex items-center gap-3">
 
-              <Star className="h-5 w-5 text-violet-600" />
+              <Star className="h-5 w-5 text-purple-700 dark:text-purple-300" />
 
-              <p className="text-sm font-semibold">
+              <p className="text-sm font-semibold text-purple-950 dark:text-purple-100">
                 Upgrade Plan
               </p>
 
@@ -353,12 +353,12 @@ export default function Sidebar() {
 
 
 
-      <div className="border-t border-white/10 p-4">
+      <div className="border-t border-purple-200/50 dark:border-purple-900/50 p-4">
 
-        <div className="flex items-center gap-3 rounded-2xl bg-white/50 p-3 dark:bg-white/5">
+        <div className="flex items-center gap-3 rounded-2xl bg-purple-100/50 p-3 dark:bg-purple-900/30">
 
 
-          <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-500 to-indigo-600 font-bold text-white">
+          <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-600 to-purple-950 font-bold text-white">
 
             {initials}
 
@@ -370,11 +370,11 @@ export default function Sidebar() {
 
             <div>
 
-              <p className="text-sm font-semibold">
+              <p className="text-sm font-semibold text-purple-950 dark:text-purple-100">
                 User
               </p>
 
-              <p className="text-xs text-slate-500">
+              <p className="text-xs text-purple-700 dark:text-purple-300">
                 Account
               </p>
 
